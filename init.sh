@@ -25,6 +25,11 @@ make_backup() {
   test -e $1 && mv $1 $1.backup 
 }
 
+# Ranger
+RANGER_PATH=~/.config/ranger/rifle.conf
+make_backup $RANGER_PATH
+ln -s ${SCRIPT_PATH}/ranger/rifle.conf ${RANGER_PATH}
+
 # Tmux
 TMUX_PATH=~/.tmux.conf
 make_backup $TMUX_PATH
