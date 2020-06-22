@@ -28,3 +28,11 @@ test -e $TMUX_PATH && mv $TMUX_PATH $TMUX_PATH.backup
 echo "ln -l ${SCRIPT_PATH}/tmux/.tmux.conf ${TMUX_PATH}"
 ln -s ${SCRIPT_PATH}/tmux/.tmux.conf ${TMUX_PATH}
 
+# Vim
+VIM_PATH=.vim
+VIM_COLORS_PATH=${VIM_PATH}/colors
+## Colors
+test -d $VIM_COLORS_PATH && mkdir $VIM_COLORS_PATH
+cp $SCRIPT_PATH/vim/colors/* $VIM_COLORS_PATH
+
+
