@@ -20,19 +20,32 @@
 set -o nounset                              # Treat unset variables as an error
 
 SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-echo Script path: $SCRIPT_PATH
+
+make_backup() { 
+  test -e $1 && mv $1 $1.backup 
+}
 
 # Tmux
 TMUX_PATH=~/.tmux.conf
-test -e $TMUX_PATH && mv $TMUX_PATH $TMUX_PATH.backup 
-echo "ln -l ${SCRIPT_PATH}/tmux/.tmux.conf ${TMUX_PATH}"
+make_backup $TMUX_PATH
 ln -s ${SCRIPT_PATH}/tmux/.tmux.conf ${TMUX_PATH}
 
 # Vim
-VIM_PATH=.vim
-VIM_COLORS_PATH=${VIM_PATH}/colors
 ## Colors
-test -d $VIM_COLORS_PATH && mkdir $VIM_COLORS_PATH
+VIM_COLORS_PATH=~/.vim/colors
+test ! -d $VIM_COLORS_PATH && mkdir $VIM_COLORS_PATH
 cp $SCRIPT_PATH/vim/colors/* $VIM_COLORS_PATH
+## .vimrc
+VIM_PATH=~/.vimrc
+make_backup $VIM_PATH
+ln -s ${SCRIPT_PATH}/vim/.vimrc ${VIM_PATH}
+## dependencies
+### vim jedi
+sudo apt-get install curl vim exuberant-ctags git ack-grep
+pip install pep8 flake8 pyflakes isort yapf
+### autopep8
+pip install autopep8
+
+
 
 
