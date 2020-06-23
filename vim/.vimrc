@@ -12,6 +12,8 @@ Plug 'tpope/vim-sensible'           			" Default vim behaviors
 Plug 'vim-scripts/The-NERD-tree'    			" Nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'vim-airline/vim-airline'				" status line
+Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'            			" Tagbar
 Plug 'airblade/vim-gitgutter'       			" Git
 Plug 'ap/vim-buftabline'            			" vim buffers
@@ -34,7 +36,6 @@ if need_to_install_plugins == 1
   echo "Done!"
   q
 endif
-
 
 " enable 256 colors
 set background=dark
@@ -60,12 +61,13 @@ nmap <S-tab> <<
 
 " color scheme
 syntax on
-colorscheme atom-dark-256
 filetype on
 filetype plugin indent on
+colorscheme elflord
 highlight Visual cterm=reverse ctermbg=NONE
 
 " ext setups
+setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 
 autocmd Filetype py setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 
 autocmd Filetype scala setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 
 
@@ -87,6 +89,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : 'i',
     \ "Unknown"   : "?"
     \ }
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 "syntastic"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -101,6 +104,8 @@ map <leader>t :TagbarToggle<CR>
 "pep8
 let g:pep8_ignore="E501,E722"
 " terraform "
-autocmd BufEnter *.tf colorscheme elflord
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+" Airline
+let g:airline_powerline_fonts = 1
+
