@@ -17,6 +17,7 @@ Plug 'airblade/vim-gitgutter'       			" Git
 Plug 'ap/vim-buftabline'            			" vim buffers
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }	" fzf
 Plug 'scrooloose/syntastic'
+Plug 'chriskempson/base16-vim'				" colors
 Plug 'vim-scripts/bash-support.vim' 			" Bash
 Plug 'davidhalter/jedi-vim'         			" Python
 Plug 'vim-scripts/indentpython.vim'
@@ -75,15 +76,15 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 "NerdTree gitplugin"
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
+    \ "Modified"  : "m",
+    \ "Staged"    : "s",
+    \ "Untracked" : "u",
+    \ "Renamed"   : "r",
+    \ "Unmerged"  : "nm",
+    \ "Deleted"   : "d",
+    \ "Dirty"     : "D",
+    \ "Clean"     : "c",
+    \ 'Ignored'   : 'i',
     \ "Unknown"   : "?"
     \ }
 "syntastic"
