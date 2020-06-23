@@ -59,12 +59,14 @@ nmap <S-tab> <<
 
 " color scheme
 syntax on
-colorscheme atom-dark
+colorscheme atom-dark-256
 filetype on
 filetype plugin indent on
+highlight Visual cterm=reverse ctermbg=NONE
 
 " ext setups
-autocmd Filetype py setl tabstop=4 softtabstop=2 expandtab shiftwidth=4 
+autocmd Filetype py setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 
+autocmd Filetype scala setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 
 
 " plugin setups
 "NerdTree"
@@ -97,5 +99,7 @@ let g:syntastic_python_flake8_args='--ignore=E501'
 map <leader>t :TagbarToggle<CR>
 "pep8
 let g:pep8_ignore="E501,E722"
-
-
+" terraform "
+autocmd BufEnter *.tf colorscheme elflord
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
