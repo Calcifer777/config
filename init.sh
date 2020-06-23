@@ -63,4 +63,5 @@ sudo apt-get install curl vim exuberant-ctags git ack-grep
 ### vim airline
 # sudo apt-get install powerline
 # sudo apt-get install fonts-powerline
+sudo apt-get install pandoc
 

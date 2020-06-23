@@ -12,20 +12,22 @@ Plug 'tpope/vim-sensible'           			" Default vim behaviors
 Plug 'vim-scripts/The-NERD-tree'    			" Nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'vim-airline/vim-airline'				" status line
+Plug 'vim-airline/vim-airline'				              " status line
 Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'            			" Tagbar
-Plug 'airblade/vim-gitgutter'       			" Git
-Plug 'ap/vim-buftabline'            			" vim buffers
+Plug 'majutsushi/tagbar'            			          " Tagbar
+Plug 'airblade/vim-gitgutter'       			          " Git
+Plug 'ap/vim-buftabline'            			          " vim buffers
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }	" fzf
-Plug 'tpope/vim-surround'            			" brackets
+Plug 'tpope/vim-surround'            			          " brackets
+Plug 'vim-pandoc/vim-pandoc'            			      " pandoc
+Plug 'vim-pandoc/vim-pandoc-syntax'            			
 Plug 'scrooloose/syntastic'
-Plug 'chriskempson/base16-vim'				" colors
-Plug 'vim-scripts/bash-support.vim' 			" Bash
-Plug 'davidhalter/jedi-vim'         			" Python
+Plug 'chriskempson/base16-vim'				              " colors
+Plug 'vim-scripts/bash-support.vim' 			          " Bash
+Plug 'davidhalter/jedi-vim'         			          " Python
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tell-k/vim-autopep8'
-Plug 'hashivim/vim-terraform'	    			" Terraform
+Plug 'hashivim/vim-terraform'	    			            " Terraform
 call plug#end()
 
 filetype plugin indent on
