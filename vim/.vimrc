@@ -1,7 +1,7 @@
 " plugins
 let need_to_install_plugins = 0
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   "autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   let need_to_install_plugins = 1
@@ -66,10 +66,13 @@ filetype plugin indent on
 colorscheme elflord
 highlight Visual cterm=reverse ctermbg=NONE
 
+" Font
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+
 " ext setups
-setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 
-autocmd Filetype py setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 
-autocmd Filetype scala setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 
+setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
+autocmd Filetype py setl tabstop=4 softtabstop=4 expandtab shiftwidth=4
+autocmd Filetype scala setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
 
 " plugin setups
 "NerdTree"
@@ -107,5 +110,40 @@ let g:pep8_ignore="E501,E722"
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 " Airline
+" if !exists('g:airline_symbols')
+"   let g:airline_symbols = {}
+" endif
+" " unicode symbols
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+" let g:airline_symbols.crypt = '🔒'
+" let g:airline_symbols.linenr = '☰'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.maxlinenr = ''
+" let g:airline_symbols.maxlinenr = '㏑'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.spell = 'Ꞩ'
+" let g:airline_symbols.notexists = 'Ɇ'
+" let g:airline_symbols.whitespace = 'Ξ'
+" " powerline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = '☰'
+" let g:airline_symbols.maxlinenr = ''
+" let g:airline_symbols.dirty='⚡'
+" Use powerline symbols
 let g:airline_powerline_fonts = 1
+let g:airline_theme='deus'
+" let g:airline_theme='bubblegum'
 

@@ -50,7 +50,8 @@ sudo apt-get install curl vim exuberant-ctags git ack-grep
 pip install pep8 flake8 pyflakes isort yapf
 ### autopep8
 pip install autopep8
-
-
+### vim airline
+sudo apt-get install powerline
+sudo apt-get install fonts-powerline
 
 
