@@ -18,6 +18,7 @@ Plug 'majutsushi/tagbar'            			          " Tagbar
 Plug 'airblade/vim-gitgutter'       			          " Git
 Plug 'ap/vim-buftabline'            			          " vim buffers
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }	" fzf
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'            			          " brackets
 Plug 'vim-pandoc/vim-pandoc'            			      " pandoc
 Plug 'vim-pandoc/vim-pandoc-syntax'            			
