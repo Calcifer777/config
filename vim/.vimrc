@@ -25,7 +25,6 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'scrooloose/syntastic'
 Plug 'chriskempson/base16-vim'				              " colors
 Plug 'vim-scripts/bash-support.vim' 			          " Bash
-Plug 'davidhalter/jedi-vim'         			          " Python
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tell-k/vim-autopep8'
 Plug 'hashivim/vim-terraform'	    			            " Terraform
@@ -63,6 +62,10 @@ nmap <Tab> >>
 imap <S-Tab> <Esc><<i
 nmap <S-tab> <<
 
+" buffer cycling
+nnoremap H :bprevious<CR>
+nnoremap L :bnext<CR>
+
 " color scheme
 syntax on
 filetype on
@@ -71,7 +74,7 @@ colorscheme elflord
 highlight Visual cterm=reverse ctermbg=NONE
 
 " Font
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
 
 " ext setups
 setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
@@ -117,5 +120,6 @@ let g:terraform_fmt_on_save=1
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='deus'
-
+" fzf
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 
