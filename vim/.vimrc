@@ -17,12 +17,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'            			          " Tagbar
 Plug 'airblade/vim-gitgutter'       			          " Git
 Plug 'ap/vim-buftabline'            			          " vim buffers
+Plug 'qpkorr/vim-bufkill'            			          " vim buffers
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }	" fzf
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'            			          " brackets
 Plug 'vim-pandoc/vim-pandoc'            			      " pandoc
 Plug 'vim-pandoc/vim-pandoc-syntax'            			
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'                       " heavy
 Plug 'chriskempson/base16-vim'				              " colors
 Plug 'vim-scripts/bash-support.vim' 			          " Bash
 Plug 'vim-scripts/indentpython.vim'
@@ -107,7 +108,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
 "Tagbar toggle"
