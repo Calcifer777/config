@@ -33,8 +33,8 @@ Plug 'tell-k/vim-autopep8'
 Plug 'hashivim/vim-terraform'	    			            " Terraform
 call plug#end()
 
-filetype plugin indent on
-syntax on
+" filetype plugin indent on
+" syntax on
 
 if need_to_install_plugins == 1
   echo "Installing plugins..."
@@ -141,11 +141,13 @@ highlight Visual cterm=reverse ctermbg=NONE
 
 set guifont=Liberation\ Mono\ for\ Powerline\ 10  " needed for airline
 
+" syntax highlight for hcl files; same a tf files
+au BufNewFile,BufRead ?\+.hcl setf tf
+
 " ext setups
-setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
-autocmd Filetype py setl tabstop=4 softtabstop=4 expandtab shiftwidth=4
-autocmd Filetype scala setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
-autocmd Filetype hcl setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
-autocmd Filetype md setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
+setl                         tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
+autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4
+autocmd Filetype scala  setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
+autocmd Filetype md     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
