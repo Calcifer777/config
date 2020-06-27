@@ -8,23 +8,25 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-Plug 'tpope/vim-sensible'           			" Default vim behaviors
-Plug 'vim-scripts/The-NERD-tree'    			" Nerdtree
+Plug 'tpope/vim-sensible'           			          " Default vim behaviors
+Plug 'vim-scripts/The-NERD-tree'    			          " Nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-airline/vim-airline'				              " status line
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'            			          " Tagbar
 Plug 'airblade/vim-gitgutter'       			          " Git
+Plug 'tpope/vim-fugitive'       			              " Git
 Plug 'ap/vim-buftabline'            			          " vim buffers
 Plug 'qpkorr/vim-bufkill'            			          " vim buffers
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }	" fzf
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'            			          " brackets
 Plug 'vim-pandoc/vim-pandoc'            			      " pandoc
-Plug 'vim-pandoc/vim-pandoc-syntax'            			
-Plug 'scrooloose/syntastic'                       " heavy
-Plug 'chriskempson/base16-vim'				              " colors
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'chriskempson/base16-vim'
+Plug 'scrooloose/syntastic'                         " heavy
+Plug 'sainnhe/gruvbox-material'
 Plug 'vim-scripts/bash-support.vim' 			          " Bash
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tell-k/vim-autopep8'
@@ -49,6 +51,9 @@ set t_ut=   " this value is blank intentionally
 " turn on line numbering
 set number
 
+" refresh state
+set updatetime=250
+
 " wrapping
 set nowrap
 
@@ -67,15 +72,6 @@ nmap <S-tab> <<
 nnoremap H :bprevious<CR>
 nnoremap L :bnext<CR>
 
-" color scheme
-syntax on
-filetype on
-filetype plugin indent on
-colorscheme elflord
-highlight Visual cterm=reverse ctermbg=NONE
-
-" Font
-" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
 
 " ext setups
 setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
@@ -87,20 +83,6 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 "NerdTree"
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-"NerdTree gitplugin"
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "m",
-    \ "Staged"    : "s",
-    \ "Untracked" : "u",
-    \ "Renamed"   : "r",
-    \ "Unmerged"  : "nm",
-    \ "Deleted"   : "d",
-    \ "Dirty"     : "D",
-    \ "Clean"     : "c",
-    \ 'Ignored'   : 'i',
-    \ "Unknown"   : "?"
-    \ }
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 "syntastic"
 set statusline+=%#warningmsg#
@@ -120,12 +102,12 @@ let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='deus'
+let g:airline_theme='gruvbox_material'
 " fzf
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 
 " interactive terminal
-function s:exec_on_term(lnum1, lnum2)
+function! s:exec_on_term(lnum1, lnum2)
   " get terminal buffer
   let g:terminal_buffer = get(g:, 'terminal_buffer', -1)
   " open new terminal if it doesn't exist
@@ -148,5 +130,11 @@ command! -range ExecOnTerm call s:exec_on_term(<line1>, <line2>)
 nnoremap <leader>e :ExecOnTerm<cr>
 vnoremap <leader>e :ExecOnTerm<cr>
 
+" color scheme
+syntax on
+filetype on
+filetype plugin indent on
+colorscheme gruvbox-material
+highlight Visual cterm=reverse ctermbg=NONE
 
-
+set guifont=Liberation\ Mono\ for\ Powerline\ 10  " needed for airline
