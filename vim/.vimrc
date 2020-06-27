@@ -71,13 +71,9 @@ nmap <S-tab> <<
 " buffer cycling
 nnoremap H :bprevious<CR>
 nnoremap L :bnext<CR>
+nnoremap <S-e> :tabNext<CR>
+nnoremap <S-q> :tabprevious<CR>
 
-
-" ext setups
-setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
-autocmd Filetype py setl tabstop=4 softtabstop=4 expandtab shiftwidth=4
-autocmd Filetype scala setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " plugin setups
 "NerdTree"
@@ -130,6 +126,12 @@ command! -range ExecOnTerm call s:exec_on_term(<line1>, <line2>)
 nnoremap <leader>e :ExecOnTerm<cr>
 vnoremap <leader>e :ExecOnTerm<cr>
 
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 " color scheme
 syntax on
 filetype on
@@ -138,3 +140,12 @@ colorscheme gruvbox-material
 highlight Visual cterm=reverse ctermbg=NONE
 
 set guifont=Liberation\ Mono\ for\ Powerline\ 10  " needed for airline
+
+" ext setups
+setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
+autocmd Filetype py setl tabstop=4 softtabstop=4 expandtab shiftwidth=4
+autocmd Filetype scala setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
+autocmd Filetype hcl setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
+autocmd Filetype md setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
