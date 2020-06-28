@@ -101,6 +101,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='gruvbox_material'
 " fzf
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+" gruvbox-material
+" prevents comments from appearing always highlighted
+let g:gruvbox_material_disable_italic_comment = 1 
 
 " interactive terminal
 function! s:exec_on_term(lnum1, lnum2)
@@ -148,5 +151,6 @@ setl                         tabstop=2 softtabstop=2 expandtab shiftwidth=2 smar
 autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4
 autocmd Filetype scala  setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
 autocmd Filetype md     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
+autocmd Filetype sh     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
