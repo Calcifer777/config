@@ -137,7 +137,6 @@ syntax on
 filetype on
 filetype plugin indent on
 colorscheme gruvbox-material
-highlight Visual cterm=reverse ctermbg=NONE
 
 set guifont=Liberation\ Mono\ for\ Powerline\ 10  " needed for airline
 
