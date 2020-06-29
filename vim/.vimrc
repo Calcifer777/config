@@ -147,10 +147,10 @@ set guifont=Liberation\ Mono\ for\ Powerline\ 10  " needed for airline
 au BufNewFile,BufRead ?\+.hcl setf tf
 
 " ext setups
-setl                         tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
-autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4
-autocmd Filetype scala  setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
-autocmd Filetype md     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
-autocmd Filetype sh     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2
+set                          tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
+autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
+autocmd Filetype scala  setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
+autocmd Filetype md     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
+autocmd Filetype sh     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
