@@ -62,6 +62,10 @@ set fileformat=unix
 set encoding=utf-8
 set fileencoding=utf-8
 
+" search options
+set ignorecase
+set smartcase
+
 " sane editing
 " indent/unindent with tab/shift-tab
 nmap <Tab> >>
