@@ -31,6 +31,8 @@ Plug 'vim-scripts/bash-support.vim' 			          " Bash
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tell-k/vim-autopep8'
 Plug 'hashivim/vim-terraform'	    			            " Terraform
+Plug 'aserebryakov/vim-todo-lists'	    			            " Terraform
+Plug 'dkprice/vim-easygrep'	    			            " Terraform
 call plug#end()
 
 " filetype plugin indent on
