@@ -110,6 +110,9 @@ set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 " gruvbox-material
 " prevents comments from appearing always highlighted
 let g:gruvbox_material_disable_italic_comment = 1 
+" easygrep
+let g:EasyGrepRecursive = 1
+let g:EasyGrepIgnoreCase = 1
 
 " interactive terminal
 function! s:exec_on_term(lnum1, lnum2)
