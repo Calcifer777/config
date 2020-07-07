@@ -31,8 +31,8 @@ Plug 'vim-scripts/bash-support.vim' 			          " Bash
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tell-k/vim-autopep8'
 Plug 'hashivim/vim-terraform'	    			            " Terraform
-Plug 'aserebryakov/vim-todo-lists'	    			            " Terraform
-Plug 'dkprice/vim-easygrep'	    			            " Terraform
+Plug 'aserebryakov/vim-todo-lists'
+Plug 'dkprice/vim-easygrep'
 call plug#end()
 
 " filetype plugin indent on
@@ -109,7 +109,7 @@ let g:airline_theme='gruvbox_material'
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 " gruvbox-material
 " prevents comments from appearing always highlighted
-let g:gruvbox_material_disable_italic_comment = 1 
+let g:gruvbox_material_disable_italic_comment = 1
 " easygrep
 let g:EasyGrepRecursive = 1
 let g:EasyGrepIgnoreCase = 1
@@ -138,6 +138,9 @@ command! -range ExecOnTerm call s:exec_on_term(<line1>, <line2>)
 nnoremap <leader>e :ExecOnTerm<cr>
 vnoremap <leader>e :ExecOnTerm<cr>
 
+command Sqlfmt execute ":%!sqlformat --reindent --keywords upper --identifiers lower -"
+command JsonPrettify execute ":%!python -m json.tool"
+
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -150,16 +153,17 @@ filetype on
 filetype plugin indent on
 colorscheme gruvbox-material
 
-set guifont=Liberation\ Mono\ for\ Powerline\ 10  " needed for airline
+" set guifont=Liberation\ Mono\ for\ Powerline\ 10  " needed for airline
+" set guifont=Fira\ Mono\ for\ Powerline\ 10  " needed for airline
+set guifont=Ubuntu\ Nerd\ Font\ Complete\ Mono\ Windows\ Compatible\ 10  " needed for airline
 
 " syntax highlight for hcl files; same a tf files
 au BufNewFile,BufRead ?\+.hcl setf tf
 
 " ext setups
 set                          tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
-autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
+autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab foldmethod=indent
 autocmd Filetype scala  setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd Filetype md     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd Filetype sh     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd FileType json syntax match Comment +\/\/.\+$+
-
