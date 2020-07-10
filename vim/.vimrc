@@ -33,6 +33,7 @@ Plug 'tell-k/vim-autopep8'
 Plug 'hashivim/vim-terraform'	    			            " Terraform
 Plug 'aserebryakov/vim-todo-lists'
 Plug 'dkprice/vim-easygrep'
+Plug 'fatih/vim-go'                                 " go
 call plug#end()
 
 " filetype plugin indent on
@@ -113,6 +114,9 @@ let g:gruvbox_material_disable_italic_comment = 1
 " easygrep
 let g:EasyGrepRecursive = 1
 let g:EasyGrepIgnoreCase = 1
+" go
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
 
 " interactive terminal
 function! s:exec_on_term(lnum1, lnum2)
