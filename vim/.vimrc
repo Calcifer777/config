@@ -30,7 +30,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'vim-scripts/bash-support.vim' 			          " Bash
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tell-k/vim-autopep8'
-Plug 'hashivim/vim-terraform'	    			            " Terraform
+" Plug 'hashivim/vim-terraform'	    			            " Terraform
 Plug 'aserebryakov/vim-todo-lists'
 Plug 'dkprice/vim-easygrep'
 Plug 'fatih/vim-go'                                 " go
@@ -144,6 +144,8 @@ vnoremap <leader>e :ExecOnTerm<cr>
 
 command Sqlfmt execute ":%!sqlformat --reindent --keywords upper --identifiers lower -"
 command JsonPrettify execute ":%!python -m json.tool"
+command HclFmt execute ":!terragrunt hclfmt --terragrunt-hclfmt-file %"
+command HclFmtAll execute ":!terragrunt hclfmt"
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
