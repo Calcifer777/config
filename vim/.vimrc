@@ -27,7 +27,6 @@ Plug 'tpope/vim-surround'            			                " brackets
 Plug 'vim-pandoc/vim-pandoc'            			            " pandoc
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chriskempson/base16-vim'
-Plug 'scrooloose/syntastic'                               " heavy
 Plug 'sainnhe/gruvbox-material'
 Plug 'vim-scripts/bash-support.vim' 			                " Bash
 Plug 'vim-scripts/indentpython.vim'
@@ -38,6 +37,7 @@ Plug 'fatih/vim-go'                                       " go
 Plug 'jstemmer/gotags'                                    " go
 Plug 'derekwyatt/vim-scala'                               " scala
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-vimtex', {'tag': '1.0.4'}
 call plug#end()
 
 " filetype plugin indent on
