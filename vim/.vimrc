@@ -37,6 +37,7 @@ Plug 'fatih/vim-go'                                       " go
 Plug 'jstemmer/gotags'                                    " go
 Plug 'derekwyatt/vim-scala'                               " scala
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 call plug#end()
 
 " filetype plugin indent on
@@ -101,6 +102,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_mode_map = {
+          \ "mode": "passive",
+          \ "active_filetypes": [],
+          \ "passive_filetypes": [] }
+
+
 "Tagbar toggle"
 map <leader>t :TagbarToggle<CR>
 "pep8"
@@ -271,12 +278,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" color scheme
-syntax on
-filetype on
-filetype plugin indent on
-colorscheme gruvbox-material
-
 " set guifont=Liberation\ Mono\ for\ Powerline\ 10  " needed for airline
 " set guifont=Fira\ Mono\ for\ Powerline\ 10  " needed for airline
 set guifont=Ubuntu\ Nerd\ Font\ Complete\ Mono\ Windows\ Compatible\ 10  " needed for airline
@@ -286,8 +287,15 @@ au BufNewFile,BufRead ?\+.hcl setf tf
 
 " ext setups
 set                          tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
-autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab foldmethod=indent
+autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 autocmd Filetype scala  setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd Filetype md     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd Filetype sh     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" color scheme
+syntax on
+filetype on
+filetype plugin indent on
+colorscheme gruvbox-material
+
