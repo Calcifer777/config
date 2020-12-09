@@ -36,6 +36,7 @@ Plug 'fatih/vim-go'                                       " go
 Plug 'jstemmer/gotags'                                    " go
 Plug 'derekwyatt/vim-scala'                               " scala
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'lervag/vimtex'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'neoclide/coc-vimtex', {'tag': '1.0.4'}
 call plug#end()
@@ -120,6 +121,11 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='gruvbox_material'
 " fzf
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+" fzf file fuzzy search that respects .gitignore
+" If in git directory, show only files that are committed, staged, or unstaged
+" else use regular :Files
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+
 " gruvbox-material
 " prevents comments from appearing always highlighted
 let g:gruvbox_material_disable_italic_comment = 1
@@ -295,6 +301,9 @@ autocmd Filetype scala  setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smar
 autocmd Filetype md     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd Filetype sh     setl tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" vimtex
+let g:tex_flavor = 'latex'
 
 " color scheme
 syntax on
