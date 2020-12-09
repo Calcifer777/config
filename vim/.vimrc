@@ -285,6 +285,9 @@ set guifont=Ubuntu\ Nerd\ Font\ Complete\ Mono\ Windows\ Compatible\ 10  " neede
 " syntax highlight for hcl files; same a tf files
 au BufNewFile,BufRead ?\+.hcl setf tf
 
+" syntax highlight for Jenkinsfile
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
 " ext setups
 set                          tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 autocmd Filetype py     setl tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
