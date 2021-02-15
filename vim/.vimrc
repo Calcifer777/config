@@ -274,7 +274,8 @@ nmap <Leader>ws <Plug>(coc-metals-expand-decoration)
 " vnoremap <leader>e :ExecOnTerm<cr>
 
 command Sqlfmt execute ":%!sqlformat --reindent --keywords upper --identifiers lower -"
-command JsonPrettify execute ":%!python -m json.tool"
+command JsonPrettifyPython execute ":%!python -m json.tool"
+command JsonPrettifyJQ execute ":%!jq . --indent 2"
 command HclFmt execute ":!terragrunt hclfmt --terragrunt-hclfmt-file %"
 command HclFmtAll execute ":!terragrunt hclfmt"
 
